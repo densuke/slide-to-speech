@@ -1,0 +1,8 @@
+#!/bin/bash -e
+
+LENGTH=$(ffprobe $2 -hide_banner -show_entries format=duration 2>/dev/null| grep duration | cut -d= -f2)
+echo "converting $1 to mixed movie..."
+ffmpeg -loglevel fatal -loop 1 -i $1 -t $LENGTH  -vcodec libx264 -pix_fmt yuv420p slide-$3
+ffmpeg -loglevel fatal -i slide-$3 -t $LENGTH -i $2 $3
+rm -vf slide-$3
+

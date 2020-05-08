@@ -1,1 +1,5 @@
 .env
+.vscode/
+__pycahe__
+*.mp3
+*.mp4

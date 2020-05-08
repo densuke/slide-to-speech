@@ -7,8 +7,11 @@ name = "pypi"
 ssml-builder = "*"
 google-cloud-texttospeech = "*"
 ffmpeg = "*"
+mutagen = "*"
+pdf2image = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"
+

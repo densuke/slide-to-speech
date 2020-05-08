@@ -1,0 +1,53 @@
+#!/bin/bash -e
+
+wait_until_jobn_lt () {
+  local max_jobn=$1
+    while [[ "$(jobs | wc -l)" -ge "$max_jobn" ]] ; do
+    #       実行中のジョブ数    >=   最大ジョブ数  
+    sleep 1
+  done
+}
+
+dir=$(dirname $1)
+
+# 音声ファイルを作る
+cd $dir
+for i in *.txt; do
+  wait_until_jobn_lt $(nproc)
+  b=$(basename $i .txt)
+  echo "making $i -> $b.mp3"
+  python ../convert.py $i $b.mp3 &
+done
+wait
+cd -
+
+# 画像ファイルを作る
+cd $dir
+python ../splitpdf.py $(basename $1)
+for i in *.jpg; do 
+	convert -resize x1024 $i $$.$i && mv -vf $$.$i $i
+done
+cd -
+
+# 各ページの画像+音声の合成をする
+cd $dir
+N=$(nproc); N=$((N/2))
+for i in *.mp3; do
+  wait_until_jobn_lt $N
+  b=$(basename $i .mp3)
+  [ -f $b.jpg ] && ../jpg+mp3 $b.jpg $i $$-$b.mp4 &
+done
+wait
+convert -resize x1024 ../black.png ./last.jpg
+ffmpeg -loglevel fatal -loop 1 -i last.jpg -t 1 -vcodec libx264 -pix_fmt yuv420p $$-99999.mp4
+for i in $$-*.mp4; do echo "file $i"; done > $$-all.txt
+cd -
+
+# 合成する
+echo "merging..."
+[ -f all.mp4 ] && rm -f all.mp4
+cd $dir; ffmpeg -loglevel fatal -f concat -i $$-all.txt -c copy all.mp4
+
+# 後始末
+cd $dir
+rm -fv $$*.mp4 last.png $$-all.txt
