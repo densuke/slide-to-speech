@@ -9,7 +9,7 @@ google-cloud-texttospeech = "*"
 ffmpeg = "*"
 mutagen = "*"
 pdf2image = "*"
-urllib3 = "==2.3.0"
+urllib3 = "*"
 
 [dev-packages]
 
