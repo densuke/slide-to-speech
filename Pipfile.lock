@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "448ba4a78434c2c387ff943d69d896c9da225e67f75e26a28bf9bc352660236e"
+            "sha256": "1a13c433a452f7dddfe08794dcfb9f30b08f93600fd25af025f63235e3af1378"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -165,20 +165,20 @@
         },
         "google-cloud-texttospeech": {
             "hashes": [
-                "sha256:5066b486111d450aedf49a84824c7699fd3ce7fbc56a416c358f9cde25e82c90",
-                "sha256:776e70b58385c8c34b8425c7adb27e946a858377c227b95153315d75263c1e23"
+                "sha256:37dd7c3f023f5a97db72989718d96530e05fae270e5d1de41d104b316a770afc",
+                "sha256:599ed2be08076b6abd64ab7b84ad28111a99ee34bf2ce3e0474cc5ae2d423771"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.7'",
-            "version": "==2.25.0"
+            "version": "==2.25.1"
         },
         "googleapis-common-protos": {
             "hashes": [
-                "sha256:4077f27a6900d5946ee5a369fab9c8ded4c0ef1c6e880458ea2f70c14f7b70d5",
-                "sha256:e20d2d8dda87da6fe7340afbbdf4f0bcb4c8fae7e6cadf55926c31f946b0b9b1"
+                "sha256:0b30452ff9c7a27d80bfc5718954063e8ab53dd3697093d3bc99581f5fd24212",
+                "sha256:3e1b904a27a33c821b4b749fd31d334c0c9c30e6113023d495e48979a3dc9c5f"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.69.1"
+            "version": "==1.69.2"
         },
         "grpcio": {
             "hashes": [
