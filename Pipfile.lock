@@ -152,12 +152,12 @@
         },
         "google-cloud-texttospeech": {
             "hashes": [
-                "sha256:1a39653193f129bbb5d4d117e0c762c4771b6a7a3cf8816e3a3f1a3cd8c514ec",
-                "sha256:93ad019cd6a2620d257210b4b36f829234748e4ccfd3ed733da512313037aed9"
+                "sha256:2c0b7378ba7639f70737f4a39de2493d30c85d387b8c16822c6e7e100c1c75a3",
+                "sha256:fde126e928379958d5ef8fa7bad84ac7ede6291a6fccea8d4b218b7520b91d52"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.7'",
-            "version": "==2.28.0"
+            "version": "==2.29.0"
         },
         "googleapis-common-protos": {
             "hashes": [
