@@ -1,6 +1,6 @@
-from pdf2image import convert_from_path
 from argparse import ArgumentParser
 
+from pdf2image import convert_from_path
 
 parser = ArgumentParser()
 parser.add_argument("file", help="分割したいPDFファイル")
