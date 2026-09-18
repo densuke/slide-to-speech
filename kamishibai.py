@@ -1,6 +1,6 @@
-import mp3info as MP3
 from ffmpeg import image as mpeg_image
-from PIL import Image as jpeg_image
+
+import mp3info as MP3
 
 
 def encode(jpg, mp3, output):

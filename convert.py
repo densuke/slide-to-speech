@@ -1,5 +1,6 @@
-import text_to_speech
 import argparse
+
+import text_to_speech
 from myssml import Builder
 
 parser = argparse.ArgumentParser()
@@ -7,7 +8,7 @@ parser.add_argument("text", help="音声変換したい内容が入ったテキ�
 parser.add_argument("output", help="出力ファイル名(存在していたら上書きします)")
 args = parser.parse_args()
 
-with open(args.text, "r") as f:
+with open(args.text) as f:
     t = Builder(text=f.read())
     t.sub("Kubernetes", "けーはちえす")
     t.sub("Ⅰ", "1")

@@ -40,6 +40,6 @@ if __name__ == "__main__":
     parser.add_argument("output", help="出力ファイル名(存在していたら上書きします)")
     args = parser.parse_args()
 
-    with open(args.text, "r") as f:
+    with open(args.text) as f:
         text = f.read()
         convert(text, args.output)
